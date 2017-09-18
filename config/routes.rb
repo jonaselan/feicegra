@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :posts
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
-                     controllers: { omniauth_callbacks: "callbacks" }
-
+                     controllers: { omniauth_callbacks: "callbacks",
+                                    registrations: 'users/registrations',
+                                    essions: 'users/sessions' }
 end
